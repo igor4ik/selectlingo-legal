@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SelectLingo Privacy Policy</title>
+<meta name="description" content="Privacy Policy for the SelectLingo Chrome extension.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f7f9fc;
+    --surface: #ffffff;
+    --text: #1a2233;
+    --muted: #4b5768;
+    --accent: #2456c4;
+    --accent-hover: #17369b;
+    --border: #dde3ee;
+    --code-bg: #eef2f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161f;
+      --surface: #1a2030;
+      --text: #e7ecf5;
+      --muted: #aab4c6;
+      --accent: #7ea6ff;
+      --accent-hover: #a9c3ff;
+      --border: #2b3448;
+      --code-bg: #232b3d;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.65;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1.25rem;
+  }
+  .site-name {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.05rem;
+  }
+  nav.top-nav {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  nav.top-nav a {
+    color: var(--accent);
+    text-decoration: underline;
+    font-size: 0.95rem;
+  }
+  nav.top-nav a[aria-current="page"] {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  main {
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+  }
+  h1 {
+    font-size: 1.9rem;
+    margin: 0 0 0.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+    margin: 2rem 0 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+  }
+  section:first-of-type h2 {
+    border-top: none;
+    padding-top: 0;
+  }
+  p, li {
+    color: var(--text);
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 1.5rem;
+  }
+  .intro {
+    color: var(--muted);
+  }
+  ul {
+    padding-left: 1.4rem;
+  }
+  li {
+    margin-bottom: 0.4rem;
+  }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  }
+  strong {
+    font-weight: 700;
+  }
+  footer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+  footer nav {
+    margin-top: 0.5rem;
+  }
+  footer a {
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="site-name" href="../">SelectLingo</a>
+    <nav class="top-nav" aria-label="Legal">
+      <a href="../privacy/" aria-current="page">Privacy Policy</a>
+      <a href="../terms/">Terms of Use</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <article>
+    <h1>SelectLingo Privacy Policy</h1>
+    <p class="meta"><strong>Effective date:</strong> [PLACEHOLDER — effective date]</p>
+
+    <p class="intro">This Privacy Policy applies to the SelectLingo Chrome extension (&quot;SelectLingo,&quot; &quot;the Extension,&quot; &quot;we,&quot; &quot;us&quot;), published by [PLACEHOLDER — Developer/Company Name]. It describes what information SelectLingo accesses, what it stores, how that information is used, and the choices available to you.</p>
+
+    <p class="intro">This document describes SelectLingo's current Beta data practices. It is not a substitute for legal advice (see &quot;International users&quot; and &quot;Changes to this Privacy Policy&quot; below).</p>
+
+    <section>
+      <h2>1. Introduction</h2>
+      <p>SelectLingo is a Chrome extension that helps you understand and learn language on webpages. It lets you select a word, phrase, or sentence on any page and see a translation, save words to a personal vocabulary list, and track your own study progress.</p>
+      <p>This Privacy Policy applies only to the SelectLingo Chrome extension and its associated options/vocabulary pages. It does not apply to the websites you visit while using SelectLingo, which have their own privacy practices.</p>
+    </section>
+
+    <section>
+      <h2>2. Information SelectLingo accesses</h2>
+      <p>To provide translation on the page you're viewing, SelectLingo temporarily reads:</p>
+      <ul>
+        <li>the text you select on a webpage;</li>
+        <li>nearby text on the same page, used only to help identify the source language of your selection more accurately;</li>
+        <li>when you turn on <strong>Vocabulary Page Mode</strong>, the visible text of the current page, which is compared in memory against the vocabulary you have already saved so matching words can be highlighted.</li>
+      </ul>
+      <p>Accessing this text to perform an on-the-spot translation or match is not the same as collecting or storing it. Unless described in Section 3 below, this text is used momentarily to produce a result on your screen and is not written to any persistent storage.</p>
+    </section>
+
+    <section>
+      <h2>3. Information SelectLingo stores</h2>
+      <p>SelectLingo stores the following categories of information, all within your own Chrome browser:</p>
+      <p><strong>Recently translated.</strong> When you translate an eligible single word, SelectLingo can keep a short rolling history of the original text, the translation, and the source/target languages, so you can look it up again later. This history is capped at a limited number of most-recent entries; older entries are automatically dropped as new ones are added.</p>
+      <p><strong>Vocabulary.</strong> Words and phrases you explicitly choose to save, along with their translations and your study/review progress for them (used to support the Study feature described below).</p>
+      <p><strong>Learning Statistics.</strong> Aggregate counts of your study activity over a rolling recent time window (for example, how many items you reviewed and how your saved/learning counts have changed by day). Learning Statistics do not include the words, translations, or languages themselves — only activity counts and dates.</p>
+      <p><strong>Settings.</strong> Your preferences, such as your target language, whether SelectLingo asks for confirmation before translating, multi-word selection behavior, and appearance (light/dark/system theme).</p>
+      <p><strong>Session state.</strong> A small technical flag indicating whether SelectLingo is currently turned on for your browser session. This resets automatically when your browser session ends and holds no personal content.</p>
+      <p>None of the above categories include the webpage's URL, the page title, the page's full contents, or your browsing history.</p>
+    </section>
+
+    <section>
+      <h2>4. How information is used</h2>
+      <p>The information described above is used only to:</p>
+      <ul>
+        <li>provide translations of text you select;</li>
+        <li>help detect the source language of your selection;</li>
+        <li>display your Recently Translated history and saved Vocabulary back to you;</li>
+        <li>support the Study feature (spaced repetition) for items you have saved;</li>
+        <li>calculate and display your own Learning Statistics;</li>
+        <li>remember and apply your SelectLingo preferences.</li>
+      </ul>
+      <p>SelectLingo does not use this information for advertising, profiling, or any purpose unrelated to providing the features above.</p>
+    </section>
+
+    <section>
+      <h2>5. Translation and language detection</h2>
+      <p>SelectLingo uses Chrome's own built-in <strong>Translator</strong> and <strong>LanguageDetector</strong> capabilities to perform translation and language detection. SelectLingo itself does not operate a translation server, and it does not send your selected text or the surrounding context it uses for language detection to a SelectLingo-operated server or to any third-party translation service.</p>
+      <p>When you request a translation, SelectLingo passes your selected text to Chrome's Translator capability, and (separately) may pass a small amount of nearby text to Chrome's LanguageDetector capability to improve source-language detection. These requests are handled by Chrome itself as part of the browser platform; SelectLingo does not control, and cannot fully describe, how Chrome internally processes that request beyond what Chrome documents publicly.</p>
+    </section>
+
+    <section>
+      <h2>6. Storage and synchronization</h2>
+      <p>SelectLingo uses two different types of Chrome-provided storage:</p>
+      <ul>
+        <li>Your <strong>Vocabulary, Recently Translated history, and Learning Statistics</strong> are stored using Chrome's local, device-scoped extension storage. SelectLingo does not operate a cloud backend or sync service of its own for this content.</li>
+        <li>Your <strong>Settings</strong> (preferences such as target language and appearance) are stored using Chrome's built-in sync storage, which — if you are signed into Chrome and have Chrome Sync enabled — may be synchronized by Chrome/Google across your own signed-in devices. This synchronization is provided by the Chrome browser platform, not by SelectLingo.</li>
+      </ul>
+      <p>SelectLingo does not have, and does not operate, its own server that receives or stores this information.</p>
+    </section>
+
+    <section>
+      <h2>7. Analytics and tracking</h2>
+      <p>SelectLingo does not currently use product analytics, advertising trackers, behavioral profiling, telemetry, or remote crash-reporting. The Extension does not contain any analytics or tracking software development kit (SDK).</p>
+      <p>If this changes in a future version, we will update this Privacy Policy — and, where required, SelectLingo's in-product disclosures and Chrome Web Store listing — before that change takes effect, and any future analytics will be designed to avoid collecting the content of your selections, translations, or vocabulary.</p>
+    </section>
+
+    <section>
+      <h2>8. Sharing and third parties</h2>
+      <p>SelectLingo does not sell your information. SelectLingo does not operate a backend service that receives your translated text, vocabulary, or learning data, so there is no SelectLingo-controlled server for this data to be shared from.</p>
+      <p>Two categories of platform involvement are worth noting:</p>
+      <ul>
+        <li>Chrome's built-in Translator and LanguageDetector capabilities process the text described in Section 5 as part of providing browser functionality, as described there.</li>
+        <li>If you use Chrome Sync, your Settings may pass through Google's Chrome Sync infrastructure as described in Section 6.</li>
+      </ul>
+      <p>We do not treat this browser-platform involvement as SelectLingo choosing a third-party &quot;data processor,&quot; since SelectLingo does not select, configure, or control that infrastructure — it is part of the Chrome browser you have chosen to use.</p>
+    </section>
+
+    <section>
+      <h2>9. Data retention</h2>
+      <ul>
+        <li><strong>Recently translated</strong> is kept as a bounded, rolling history; once the limit is reached, the oldest entries are automatically replaced by new ones.</li>
+        <li><strong>Vocabulary</strong> is kept until you remove an item, clear your Vocabulary, or uninstall the Extension.</li>
+        <li><strong>Learning Statistics</strong> are kept on a rolling recent-activity basis and are also reset immediately whenever you use the in-product <strong>Reset statistics</strong> control.</li>
+        <li><strong>Settings</strong> are kept until you change them, or until removed according to Chrome's storage/sync behavior (see Section 10).</li>
+        <li><strong>Session state</strong> exists only for the current browser session and is not retained afterward.</li>
+      </ul>
+      <p>We describe these limits in general terms rather than as fixed numeric commitments, because they are ordinary product tuning values that may be adjusted over time without changing what is collected or why. If a future change to these limits would materially change how long your data is kept, we will update this Privacy Policy.</p>
+    </section>
+
+    <section>
+      <h2>10. User controls and deletion</h2>
+      <p>You can manage your information directly within SelectLingo:</p>
+      <ul>
+        <li><strong>Clear</strong> your Recently Translated history at any time.</li>
+        <li><strong>Remove</strong> an individual Vocabulary item, or <strong>Clear</strong> your entire Vocabulary.</li>
+        <li><strong>Reset statistics</strong> to erase your Learning Statistics immediately.</li>
+        <li><strong>Change</strong> any setting at any time; the new value replaces the old one.</li>
+        <li><strong>Uninstall</strong> the Extension from Chrome, which removes SelectLingo's local extension storage (Vocabulary, Recently Translated, Learning Statistics, Settings, session state) from that browser installation.</li>
+      </ul>
+      <p>If you use Chrome Sync, your Settings may also exist on your other signed-in Chrome devices while the Extension is installed there. We are not able to guarantee the timing or completeness of removal of previously synced data from Google's own Chrome Sync infrastructure; Google's own documentation governs that behavior.</p>
+    </section>
+
+    <section>
+      <h2>11. Data security</h2>
+      <p>SelectLingo does not currently operate a backend server that stores your translated text, vocabulary, or learning data, so there is no SelectLingo-controlled remote database of this content to secure. Most of your content is kept using Chrome's own extension storage on your device (and, for Settings, Chrome's own sync infrastructure), which is protected by the security of your Chrome browser and Google account.</p>
+      <p>We do not claim that any system is perfectly secure. Production builds of SelectLingo do not include diagnostic logging or remote logging of your content.</p>
+    </section>
+
+    <section>
+      <h2>12. Children's privacy</h2>
+      <p>SelectLingo is not currently directed at children, and we do not knowingly design SelectLingo's features around the collection of children's personal information. [PLACEHOLDER — confirm intended audience/age policy and any applicable requirements (e.g., COPPA, GDPR-K) with legal counsel before wider or commercial launch.]</p>
+    </section>
+
+    <section>
+      <h2>13. International users</h2>
+      <p>SelectLingo may be used by people in different countries. Data-protection laws vary by location (for example, the EU's GDPR or various U.S. state privacy laws). This Beta Privacy Policy is written in general terms and has not been reviewed for compliance with every specific jurisdiction's requirements. [PLACEHOLDER — legal review recommended before broader or commercial launch, particularly if SelectLingo will be marketed into jurisdictions with specific statutory privacy requirements.]</p>
+    </section>
+
+    <section>
+      <h2>14. Changes to this Privacy Policy</h2>
+      <p>We may update this Privacy Policy as SelectLingo evolves. If we make a change that materially affects how your information is handled, we will update the effective date below and, where appropriate, provide additional notice (for example, through the Extension or the Chrome Web Store listing) before the change takes effect.</p>
+      <p><strong>Last updated:</strong> [PLACEHOLDER — date of last update]</p>
+    </section>
+
+    <section>
+      <h2>15. Contact</h2>
+      <p>If you have questions about this Privacy Policy or SelectLingo's data practices, contact us at:</p>
+      <pre><code>[PLACEHOLDER — Privacy Contact Email]
+[PLACEHOLDER — Website / Privacy Policy URL]
+[PLACEHOLDER — Developer or Company Name]</code></pre>
+    </section>
+  </article>
+</main>
+<footer>
+  <p>SelectLingo</p>
+  <nav aria-label="Legal">
+    <a href="../">Home</a> · <a href="../terms/">Terms of Use</a>
+  </nav>
+</footer>
+</body>
+</html>
