@@ -1,10 +1,16 @@
 # SelectLingo Legal Site (GitHub Pages export)
 
-This directory is an **exportable static site**, generated for the future
-`selectlingo-legal` GitHub Pages repository. It is not part of the
-SelectLingo extension build and is not served by the extension itself.
+This directory is an **exportable static site** for the `selectlingo-legal`
+GitHub Pages repository. It is not part of the SelectLingo extension build
+and is not served by the extension itself.
 
-> **DO NOT PUBLISH until all legal placeholders are filled.**
+Owner/legal placeholders have been filled.
+
+Before publishing or updating GitHub Pages:
+
+- verify the Privacy Policy and Terms HTML match their Markdown source documents;
+- verify the public URLs;
+- push only after manual review.
 
 The Privacy Policy and Terms of Use in this site are converted, without
 substantive change, from:
@@ -18,46 +24,58 @@ regenerate these HTML pages to match.
 
 ---
 
-## Placeholder checklist (must be resolved before publishing)
+## Final owner values applied
 
-The following placeholders currently appear in the generated pages and must
-be replaced with real values before this site is made public:
+- Developer/company legal name: **George Poliak**
+- Privacy/contact email: **george.poliak83@gmail.com**
+- Support email: **george.poliak83@gmail.com**
+- Governing law/jurisdiction: laws of the State of Israel; courts of
+  competent jurisdiction in Israel
+- Minimum age / intended audience: users aged 13 and older; users under 18
+  should use SelectLingo with permission from a parent or legal guardian
+- Effective date / last updated: **August 29, 2026**
 
-- [ ] Developer/Company legal name (`[PLACEHOLDER — Developer/Company Name]`)
-- [ ] Privacy contact email (`[PLACEHOLDER — Privacy Contact Email]`)
-- [ ] Terms contact email (`[PLACEHOLDER — Contact Email]`)
-- [ ] Support email, if one is used (not currently present in the drafts — add only if a real support address exists)
-- [ ] Effective date, both pages (`[PLACEHOLDER — effective date]`)
-- [ ] Last updated date, Privacy Policy (`[PLACEHOLDER — date of last update]`)
-- [ ] Governing law / jurisdiction, Terms Section 18 (`[PLACEHOLDER — Governing Law / Jurisdiction]`)
-- [ ] Minimum age / eligibility policy, Terms Section 3 (`[PLACEHOLDER — Minimum Age / Eligibility Policy]`)
-- [ ] Children's privacy / audience policy confirmation, Privacy Policy Section 12
-- [ ] International users / jurisdictional legal review, Privacy Policy Section 13
-- [ ] Final published Privacy Policy URL (`[PLACEHOLDER — Website / Privacy Policy URL]`)
-- [ ] Final published Terms of Use URL (`[PLACEHOLDER — Website / Terms of Use URL]`)
+## Canonical public URLs
 
-Every placeholder above appears verbatim in the generated HTML so it stays
-visible until it is deliberately resolved — do not invent values to make
-them disappear.
+- Legal site: `https://igor4ik.github.io/selectlingo-legal/`
+- Privacy Policy: `https://igor4ik.github.io/selectlingo-legal/privacy/`
+- Terms of Use: `https://igor4ik.github.io/selectlingo-legal/terms/`
+
+---
+
+## One remaining non-owner placeholder
+
+Privacy Policy, Section 13 ("International users"), still contains:
+
+```text
+[PLACEHOLDER — legal review recommended before broader or commercial launch,
+particularly if SelectLingo will be marketed into jurisdictions with specific
+statutory privacy requirements.]
+```
+
+This is an advisory note recommending a jurisdiction-by-jurisdiction legal
+compliance review (e.g., GDPR, U.S. state privacy laws) — it is not a value
+that can be filled from the owner information supplied (name, contact,
+governing law, age, effective date). Resolving it requires an actual legal
+review decision, not a data substitution, so it has intentionally been left
+in place in both the Markdown source and the generated HTML rather than
+invented or silently removed.
 
 ---
 
 ## Why `.nojekyll` is included
 
 GitHub Pages runs content through Jekyll by default. This site has no Jekyll
-dependency, uses a directory (`privacy/`, `terms/`) whose name starts with a
-non-underscore character (not an issue here) but, more importantly, contains
-no Liquid templating and should be served exactly as authored. The empty
-`.nojekyll` file at the repository root tells GitHub Pages to skip the
-Jekyll build step and serve the static files as-is, which is the correct and
-simplest setting for a plain static site like this one.
+dependency and no Liquid templating, and should be served exactly as
+authored. The empty `.nojekyll` file at the repository root tells GitHub
+Pages to skip the Jekyll build step and serve the static files as-is.
 
 ---
 
 ## Expected GitHub Pages repository structure
 
 Copy the contents of `docs/legal-site/` (not the `legal-site` folder itself)
-into the root of a separate repository named `selectlingo-legal`:
+into the root of the separate `selectlingo-legal` repository:
 
 ```text
 selectlingo-legal/
@@ -72,30 +90,31 @@ selectlingo-legal/
 
 Then, in that repository:
 
-1. Push the files to the `main` branch.
-2. Go to **Settings → Pages → Build and deployment**.
-3. Set **Source** to `Deploy from a branch`.
-4. Set **Branch** to `main` and folder to `/ (root)`.
-5. Wait for GitHub to publish the site and provide the URL.
-6. Verify `https://<github-user>.github.io/selectlingo-legal/`,
-   `.../privacy/`, and `.../terms/` all load correctly.
+1. Copy/update the files above in the `selectlingo-legal` repository.
+2. Commit the changes.
+3. Push to `main`.
+4. Wait for GitHub Pages to redeploy.
+5. Open `https://igor4ik.github.io/selectlingo-legal/privacy/` and
+   `https://igor4ik.github.io/selectlingo-legal/terms/` and confirm they
+   render correctly and no unintended placeholders remain.
 
-This prompt does not create the repository, push code, or configure GitHub
-Pages remotely — that remains a manual step for the user.
+This prompt does not push or publish anything — the files above have only
+been updated inside the main SelectLingo repository's `docs/legal-site/`
+working copy.
 
 ---
 
 ## Required SelectLingo follow-up (separate prompt, after publishing)
 
-Once the real Privacy Policy URL exists (i.e., after the placeholders above
-are filled and the site is actually published), a small follow-up change is
-needed in the SelectLingo extension source to set:
+Once the finalized site above has actually been pushed to the live
+`selectlingo-legal` GitHub Pages repository and verified at
+`https://igor4ik.github.io/selectlingo-legal/privacy/`, a small follow-up
+change is needed in the SelectLingo extension source to set:
 
 ```ts
 const PRIVACY_POLICY_URL = "";
 ```
 
-to the real, live `.../privacy/` URL. Do not set this to a placeholder or
-guessed URL — it must only be updated once the public page genuinely exists,
-and that update should happen in its own prompt/change, not as part of this
-static-site generation task.
+to that real, live URL. Do not set this now — that update belongs to a
+separate follow-up prompt (Prompt 062B), only after the live page is
+verified.
