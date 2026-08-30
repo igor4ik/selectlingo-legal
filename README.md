@@ -33,7 +33,15 @@ regenerate these HTML pages to match.
   competent jurisdiction in Israel
 - Minimum age / intended audience: users aged 13 and older; users under 18
   should use SelectLingo with permission from a parent or legal guardian
-- Effective date / last updated: **August 29, 2026**
+- Effective date / last updated:
+  - Privacy Policy: **August 30, 2026** — Prompt 065A added the pronunciation
+    (Listen) disclosure, the GDPR information block in Section 13, and the
+    explicit vocabulary retention rule.
+  - Terms of Use: **August 29, 2026**, unchanged. Prompt 065A corrected one
+    factual clause in Section 5 — pronunciation is produced by the browser's
+    speech synthesis, not by Translator/LanguageDetector. That corrects a
+    description; it changes no one's rights or obligations, so the effective
+    date was deliberately left alone. Bump it if you would rather it moved.
 
 ## Canonical public URLs
 
@@ -43,23 +51,25 @@ regenerate these HTML pages to match.
 
 ---
 
-## One remaining non-owner placeholder
+## No placeholders remain
 
-Privacy Policy, Section 13 ("International users"), still contains:
+An earlier revision of this file recorded a `[PLACEHOLDER]` in Privacy Policy
+Section 13 ("International users"). That placeholder was replaced with final
+wording when Section 13 was rewritten for international users, and the note is
+kept here only to explain why it is gone.
 
-```text
-[PLACEHOLDER — legal review recommended before broader or commercial launch,
-particularly if SelectLingo will be marketed into jurisdictions with specific
-statutory privacy requirements.]
-```
+Verified during the Prompt 064 release audit: no `[PLACEHOLDER]` text remains in
+`docs/privacy/PRIVACY_POLICY_DRAFT.md`, `docs/legal/TERMS_OF_USE_DRAFT.md`, or
+any file in this directory, and the live pages at
+`https://igor4ik.github.io/selectlingo-legal/privacy/` and `.../terms/` were
+fetched and confirmed placeholder-free.
 
-This is an advisory note recommending a jurisdiction-by-jurisdiction legal
-compliance review (e.g., GDPR, U.S. state privacy laws) — it is not a value
-that can be filled from the owner information supplied (name, contact,
-governing law, age, effective date). Resolving it requires an actual legal
-review decision, not a data substitution, so it has intentionally been left
-in place in both the Markdown source and the generated HTML rather than
-invented or silently removed.
+The underlying recommendation still stands, and is now tracked where it belongs
+rather than as placeholder text in a published legal document: a
+jurisdiction-by-jurisdiction compliance review (GDPR, U.S. state privacy laws)
+remains outstanding, and a dedicated **GDPR readiness/compliance audit is the
+first task after the Closed Beta phase**. Section 13's current wording makes no
+compliance claim that would pre-empt it.
 
 ---
 
@@ -104,17 +114,13 @@ working copy.
 
 ---
 
-## Required SelectLingo follow-up (separate prompt, after publishing)
+## SelectLingo follow-up — done
 
-Once the finalized site above has actually been pushed to the live
-`selectlingo-legal` GitHub Pages repository and verified at
-`https://igor4ik.github.io/selectlingo-legal/privacy/`, a small follow-up
-change is needed in the SelectLingo extension source to set:
+The site has been published and the extension now links to the live pages:
 
-```ts
-const PRIVACY_POLICY_URL = "";
-```
+- `src/onboarding/onboarding.ts` — `PRIVACY_POLICY_URL`, shown in the first-run
+  privacy disclosure;
+- `src/options/options.html` — the Privacy Policy and Terms of Use links in
+  Settings → About.
 
-to that real, live URL. Do not set this now — that update belongs to a
-separate follow-up prompt (Prompt 062B), only after the live page is
-verified.
+If a canonical URL ever changes, all three references must be updated together.

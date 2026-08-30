@@ -102,6 +102,10 @@
     border-top: none;
     padding-top: 0;
   }
+  h3 {
+    font-size: 1.05rem;
+    margin: 1.5rem 0 0.5rem;
+  }
   p, li {
     color: var(--text);
   }
@@ -167,7 +171,7 @@
 <main>
   <article>
     <h1>SelectLingo Privacy Policy</h1>
-    <p class="meta"><strong>Effective date:</strong> August 29, 2026</p>
+    <p class="meta"><strong>Effective date:</strong> August 30, 2026</p>
 
     <p class="intro">This Privacy Policy applies to the SelectLingo Chrome extension (&quot;SelectLingo,&quot; &quot;the Extension,&quot; &quot;we,&quot; &quot;us&quot;), published by George Poliak. It describes what information SelectLingo accesses, what it stores, how that information is used, and the choices available to you.</p>
 
@@ -216,9 +220,19 @@
     </section>
 
     <section>
-      <h2>5. Translation and language detection</h2>
+      <h2>5. Translation, language detection, and pronunciation</h2>
+      <p>These are three separate browser capabilities, and they behave differently. They are described separately here for that reason.</p>
+
+      <h3>Translation and language detection</h3>
       <p>SelectLingo uses Chrome's own built-in <strong>Translator</strong> and <strong>LanguageDetector</strong> capabilities to perform translation and language detection. SelectLingo itself does not operate a translation server, and it does not send your selected text or the surrounding context it uses for language detection to a SelectLingo-operated server or to any third-party translation service.</p>
       <p>When you request a translation, SelectLingo passes your selected text to Chrome's Translator capability, and (separately) may pass a small amount of nearby text to Chrome's LanguageDetector capability to improve source-language detection. These requests are handled by Chrome itself as part of the browser platform; SelectLingo does not control, and cannot fully describe, how Chrome internally processes that request beyond what Chrome documents publicly.</p>
+
+      <h3>Pronunciation (Listen)</h3>
+      <p>SelectLingo's Vocabulary and Study pages have a <strong>Listen</strong> control that reads a saved word or phrase, or its translation, aloud. Listen happens only when you press it.</p>
+      <p>Listen uses your browser's own speech synthesis, using the voices your browser and operating system make available. <strong>SelectLingo does not operate a speech service of its own</strong>, does not send the text to a SelectLingo server, and stores nothing about pronunciation — not the voice used, not a count, and not the fact that you pressed Listen.</p>
+      <p>Whether speech happens on your device depends on the voice your browser has for that language. Some voices are installed on your device; others are provided by a remote speech service, in which case the text being spoken is sent to that service by your browser in order to produce the audio. On many systems only some languages have an on-device voice available, so this is a normal situation rather than a rare one.</p>
+      <p><strong>SelectLingo asks for a voice that is installed on your device whenever your browser reports one for the language.</strong> Where your browser reports no on-device voice for that language, SelectLingo uses a suitable available voice instead, so that Listen keeps working — and that voice may be a remote one. In that case, the word or phrase being spoken may be processed by your browser or operating system's speech provider under their own terms, not SelectLingo's. We cannot promise that Listen is always processed on your device, and we do not claim it is.</p>
+      <p>If you would prefer that no text is ever sent for speech synthesis, simply do not use the Listen control; every other SelectLingo feature works without it.</p>
     </section>
 
     <section>
@@ -240,10 +254,11 @@
     <section>
       <h2>8. Sharing and third parties</h2>
       <p>SelectLingo does not sell your information. SelectLingo does not operate a backend service that receives your translated text, vocabulary, or learning data, so there is no SelectLingo-controlled server for this data to be shared from.</p>
-      <p>Two categories of platform involvement are worth noting:</p>
+      <p>Three categories of platform involvement are worth noting:</p>
       <ul>
         <li>Chrome's built-in Translator and LanguageDetector capabilities process the text described in Section 5 as part of providing browser functionality, as described there.</li>
         <li>If you use Chrome Sync, your Settings may pass through Google's Chrome Sync infrastructure as described in Section 6.</li>
+        <li>If you use <strong>Listen</strong>, your browser's speech synthesis produces the audio. Where your browser has no on-device voice for that language and uses a remote one, the text being spoken is sent by your browser to that speech provider, as described in Section 5.</li>
       </ul>
       <p>We do not treat this browser-platform involvement as SelectLingo choosing a third-party &quot;data processor,&quot; since SelectLingo does not select, configure, or control that infrastructure — it is part of the Chrome browser you have chosen to use.</p>
     </section>
@@ -252,10 +267,11 @@
       <h2>9. Data retention</h2>
       <ul>
         <li><strong>Recently translated</strong> is kept as a bounded, rolling history; once the limit is reached, the oldest entries are automatically replaced by new ones.</li>
-        <li><strong>Vocabulary</strong> is kept until you remove an item, clear your Vocabulary, or uninstall the Extension.</li>
+        <li><strong>Vocabulary</strong> has no expiry and is never removed automatically: it is kept for as long as you keep it, until you remove an item, clear your Vocabulary, or uninstall the Extension. This is deliberate — deleting words you chose to save, in order to make room for other words you chose to save, is not a decision SelectLingo makes for you.</li>
         <li><strong>Learning Statistics</strong> are kept on a rolling recent-activity basis and are also reset immediately whenever you use the in-product <strong>Reset statistics</strong> control.</li>
         <li><strong>Settings</strong> are kept until you change them, or until removed according to Chrome's storage/sync behavior (see Section 10).</li>
         <li><strong>Session state</strong> exists only for the current browser session and is not retained afterward.</li>
+        <li><strong>Pronunciation</strong> retains nothing at all. SelectLingo keeps no record of what was spoken, which voice spoke it, or that Listen was used.</li>
       </ul>
       <p>We describe these limits in general terms rather than as fixed numeric commitments, because they are ordinary product tuning values that may be adjusted over time without changing what is collected or why. If a future change to these limits would materially change how long your data is kept, we will update this Privacy Policy.</p>
     </section>
@@ -286,13 +302,37 @@
 
     <section>
       <h2>13. International users</h2>
-      <p>SelectLingo may be used by people in different countries. Data-protection laws vary by location (for example, the EU's GDPR or various U.S. state privacy laws). SelectLingo is designed with privacy and data minimization in mind. Where applicable, we aim to handle information in accordance with applicable data-protection laws, including the GDPR. Privacy and data-protection rights may vary depending on where you live. Where applicable law provides you with rights regarding information handled by SelectLingo, you may contact us at <a href="mailto:george.poliak83@gmail.com">george.poliak83@gmail.com</a>. Nothing in this Privacy Policy limits rights that cannot be waived under applicable law.</p>
+      <p>SelectLingo may be used by people in different countries. Data-protection laws vary by location (for example, the EU's GDPR or various U.S. state privacy laws). SelectLingo is designed with privacy and data minimization in mind. Where applicable, we aim to handle information in accordance with applicable data-protection laws, including the GDPR. Privacy and data-protection rights may vary depending on where you live. Nothing in this Privacy Policy limits rights that cannot be waived under applicable law.</p>
+      <p>The rest of this section is for users in the European Union and the European Economic Area, and for anyone else to whom the GDPR applies.</p>
+
+      <h3>Who is responsible for your information</h3>
+      <p>SelectLingo is published and operated by <strong>George Poliak</strong>. Where the GDPR applies to SelectLingo's processing, that is the person acting as the data controller for it. You can reach us about anything in this Privacy Policy at <a href="mailto:george.poliak83@gmail.com">george.poliak83@gmail.com</a>.</p>
+      <p>SelectLingo is an individually operated project. It has no company registration, no data protection officer, and no EU establishment to name here, and we would rather say so plainly than list an address that does not exist.</p>
+
+      <h3>Why we are allowed to handle your information</h3>
+      <p>Almost everything SelectLingo does happens inside your own browser, on your own device, at your request, and never reaches us — there is no SelectLingo server for it to reach.</p>
+      <p>Where the GDPR applies, processing that is necessary to provide the features you ask for is generally handled on the basis that it is necessary to provide the service you requested. That covers translating text you selected, detecting its language, saving vocabulary you chose to save, your study progress and statistics, and remembering your settings. It also covers speaking a word when you press Listen, as described in Section 5.</p>
+      <p>We do not rely on consent as a general basis for these features, and we do not ask you to consent to them: you choose them by using them, and you can stop at any time. The acknowledgement shown when you first enable SelectLingo is a disclosure of what the Extension does — it is not GDPR consent, and we do not treat it as consent for anything. SelectLingo does no advertising, profiling, tracking, or marketing, so no processing here relies on legitimate interests for those purposes.</p>
+      <p>If SelectLingo ever introduces processing that genuinely needs your consent — analytics, for example — that would be asked for separately, would be optional, and could be withdrawn. This Privacy Policy would be updated before it took effect.</p>
+
+      <h3>Your rights, and what they mean in practice</h3>
+      <p>Where the GDPR applies, you have rights to <strong>access</strong> your personal data, to have it <strong>corrected</strong>, to have it <strong>erased</strong>, to <strong>restrict</strong> or <strong>object to</strong> its processing, to <strong>data portability</strong>, and to <strong>withdraw consent</strong> for any processing that actually relies on consent.</p>
+      <p>How these work for SelectLingo is unusual, and worth being direct about:</p>
+      <ul>
+        <li><strong>We hold nothing about you.</strong> SelectLingo has no accounts, no sign-in, no user or device identifier, and no server that receives your data. In the ordinary case we cannot identify you at all, and we hold no copy of your vocabulary, history, statistics, or settings to give you, correct, or delete.</li>
+        <li><strong>You already hold it, and you can act on it directly.</strong> Your data is in your own browser, and the controls listed in Section 10 act on it immediately: view everything in the Vocabulary, Recently Translated, and Statistics views; remove a single item or a single translation; <strong>Clear</strong> your Vocabulary or your Recently Translated history; <strong>Reset statistics</strong>; change any setting; or uninstall the Extension. These are not requests to us — they take effect the moment you use them.</li>
+        <li><strong>Settings synced by Chrome are in your own Google account</strong>, not ours (Section 6). We have no access to them and cannot delete them for you; Google's own Chrome Sync controls and documentation govern that.</li>
+        <li><strong>You can still write to us.</strong> If you have a question about this Privacy Policy, believe SelectLingo holds something about you, or want help using the controls above, contact <a href="mailto:george.poliak83@gmail.com">george.poliak83@gmail.com</a> and we will respond. We will not ask you for identity documents to answer a question about data we do not hold.</li>
+      </ul>
+
+      <h3>Complaining to a supervisory authority</h3>
+      <p>If you are in the EU or EEA and you believe SelectLingo has handled your personal data unlawfully, you have the right to lodge a complaint with a competent data protection supervisory authority — normally the one in the country where you live or work, or where you believe the problem occurred. You are welcome, but not required, to contact us first.</p>
     </section>
 
     <section>
       <h2>14. Changes to this Privacy Policy</h2>
       <p>We may update this Privacy Policy as SelectLingo evolves. If we make a change that materially affects how your information is handled, we will update the effective date below and, where appropriate, provide additional notice (for example, through the Extension or the Chrome Web Store listing) before the change takes effect.</p>
-      <p><strong>Last updated:</strong> August 29, 2026</p>
+      <p><strong>Last updated:</strong> August 30, 2026</p>
     </section>
 
     <section>
