@@ -171,7 +171,7 @@
 <main>
   <article>
     <h1>SelectLingo Privacy Policy</h1>
-    <p class="meta"><strong>Effective date:</strong> August 30, 2026</p>
+    <p class="meta"><strong>Effective date:</strong> October 3, 2026</p>
 
     <p class="intro">This Privacy Policy applies to the SelectLingo Chrome extension (&quot;SelectLingo,&quot; &quot;the Extension,&quot; &quot;we,&quot; &quot;us&quot;), published by George Poliak. It describes what information SelectLingo accesses, what it stores, how that information is used, and the choices available to you.</p>
 
@@ -181,6 +181,8 @@
       <h2>1. Introduction</h2>
       <p>SelectLingo is a Chrome extension that helps you understand and learn language on webpages. It lets you select a word, phrase, or sentence on any page and see a translation, save words to a personal vocabulary list, and track your own study progress.</p>
       <p>This Privacy Policy applies only to the SelectLingo Chrome extension and its associated options/vocabulary pages. It does not apply to the websites you visit while using SelectLingo, which have their own privacy practices.</p>
+      <p>SelectLingo also offers an <strong>optional account</strong>, which you can create by signing in with Google. Signing in is entirely optional: translation, vocabulary, Study, and statistics all work fully without an account, and most of this Privacy Policy applies to you whether or not you have one. The parts that apply only to account holders are marked as such — see Section 3 (&quot;Account and sign-in information&quot;), Section 6 (&quot;Cloud sync for your Vocabulary&quot;), Section 8, and Section 10.</p>
+      <p><strong>If your version of SelectLingo shows no &quot;Account&quot; section in Settings, sign-in is not available in your version, and nothing in this Privacy Policy about accounts, Google sign-in, or Supabase applies to you.</strong></p>
     </section>
 
     <section>
@@ -202,7 +204,9 @@
       <p><strong>Learning Statistics.</strong> Aggregate counts of your study activity over a rolling recent time window (for example, how many items you reviewed and how your saved/learning counts have changed by day). Learning Statistics do not include the words, translations, or languages themselves — only activity counts and dates.</p>
       <p><strong>Settings.</strong> Your preferences, such as your target language, whether SelectLingo asks for confirmation before translating, multi-word selection behavior, and appearance (light/dark/system theme).</p>
       <p><strong>Session state.</strong> A small technical flag indicating whether SelectLingo is currently turned on for your browser session. This resets automatically when your browser session ends and holds no personal content.</p>
-      <p>None of the above categories include the webpage's URL, the page title, the page's full contents, or your browsing history.</p>
+      <p><strong>Account and sign-in information — only if you sign in.</strong> If, and only if, you choose to sign in, SelectLingo stores a small sign-in record in your browser containing your account's email address, an account identifier issued by our sign-in provider, and the access and refresh tokens that keep you signed in. This record is kept in the extension's own private browser storage, separate from everything else above, and it is removed when you sign out, when you delete your account, or when you uninstall the Extension. Your email address and account identifier are also held by our sign-in provider — see Section 8.</p>
+      <p>If you never sign in, no account record exists and no account identifier is created. SelectLingo then makes no network request of its own unless you turn on the optional reliability reports described in Section 7.</p>
+      <p>None of the above categories include the webpage's URL, the page title, the page's full contents, or your browsing history. <strong>Your Recently Translated history, Learning Statistics, and Settings are never uploaded to us or to our sign-in provider, and signing in does not change that.</strong> Your <strong>Vocabulary and its Study progress</strong> are uploaded only if you have an account and are signed in. While you are signed in, SelectLingo keeps your Vocabulary in sync with your account automatically as you change it. Nothing is uploaded while you are signed out, and Vocabulary saved in Guest mode stays on this device unless you choose to move it into an account. Section 6 describes exactly what is sent and when.</p>
     </section>
 
     <section>
@@ -214,9 +218,11 @@
         <li>display your Recently Translated history and saved Vocabulary back to you;</li>
         <li>support the Study feature (spaced repetition) for items you have saved;</li>
         <li>calculate and display your own Learning Statistics;</li>
-        <li>remember and apply your SelectLingo preferences.</li>
+        <li>remember and apply your SelectLingo preferences;</li>
+        <li>if you have signed in: create and maintain your SelectLingo account, keep you signed in between browser sessions, show you which account you are signed in with, and let you delete that account.</li>
       </ul>
-      <p>SelectLingo does not use this information for advertising, profiling, or any purpose unrelated to providing the features above.</p>
+      <p>SelectLingo does not use this information for advertising, profiling, or any purpose unrelated to providing the features above. Your email address is not used to send you marketing, is not added to a mailing list, and is not shared with anyone beyond the sign-in provider described in Section 8.</p>
+      <p><strong>Chrome Web Store User Data Policy.</strong> SelectLingo's use of information received from Google APIs, and its use and transfer of user data, will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
     </section>
 
     <section>
@@ -237,42 +243,87 @@
 
     <section>
       <h2>6. Storage and synchronization</h2>
-      <p>SelectLingo uses two different types of Chrome-provided storage:</p>
+      <p>SelectLingo uses three different types of browser storage:</p>
       <ul>
-        <li>Your <strong>Vocabulary, Recently Translated history, and Learning Statistics</strong> are stored using Chrome's local, device-scoped extension storage. SelectLingo does not operate a cloud backend or sync service of its own for this content.</li>
+        <li>Your <strong>Vocabulary, Recently Translated history, and Learning Statistics</strong> are stored using Chrome's local, device-scoped extension storage. Your Recently Translated history and Learning Statistics stay there and are never uploaded. Your Vocabulary also stays there, and additionally has a cloud copy if you have an account — see &quot;Cloud sync for your Vocabulary&quot; below.</li>
         <li>Your <strong>Settings</strong> (preferences such as target language and appearance) are stored using Chrome's built-in sync storage, which — if you are signed into Chrome and have Chrome Sync enabled — may be synchronized by Chrome/Google across your own signed-in devices. This synchronization is provided by the Chrome browser platform, not by SelectLingo.</li>
+        <li>Your <strong>sign-in record</strong>, if you have an account, is stored in the Extension's own private browser database. This storage belongs to the Extension itself, is not shared with the websites you visit, and is not synchronized anywhere. Your access and refresh tokens are never placed in Chrome's sync storage, so they are never carried to your other devices.</li>
       </ul>
-      <p>SelectLingo does not have, and does not operate, its own server that receives or stores this information.</p>
+      <p><strong>SelectLingo does not operate a server that receives or stores your Recently Translated history, your Learning Statistics, or your Settings.</strong> None of those is uploaded, whether or not you are signed in, and there is no cloud sync for them.</p>
+      <p>SelectLingo does not operate a general-purpose server of its own. It uses a third-party service to hold accounts and, for account holders, the cloud copy of their Vocabulary; and it operates two small server-side functions there: one whose only job is to delete an account when you ask for it, and one that receives optional reliability reports if you turn them on (Section 7). All of these are described in Section 8.</p>
+      <h3>Cloud sync for your Vocabulary — while you are signed in</h3>
+      <p>If you have an account, SelectLingo keeps a copy of your saved Vocabulary in that account so it is not lost with the browser it was saved in.</p>
+      <p><strong>Signing in is the decision.</strong> There is no separate switch to turn on: while you are signed in, SelectLingo keeps your account's Vocabulary and this device's copy in agreement as you save, edit, rename, remove or study words. <strong>Signing out stops it,</strong> and nothing is uploaded while you are signed out.</p>
+      <p><strong>Guest Vocabulary is never uploaded.</strong> Anything you saved before signing in stays on this device under a separate local store. If you sign in while it holds words, SelectLingo asks once whether you want to move them into that account; if you say no, they stay where they are, and nothing about them is sent anywhere.</p>
+      <p><strong>There is no button to press.</strong> Synchronization is part of having an account, so Settings offers no manual sync control: signing in starts it and signing out stops it.</p>
+      <p><strong>What is uploaded.</strong> For each saved Vocabulary entry: the word or phrase you saved, the translations attached to it, its source and target language, the date and time you first saved it, and your study record for it — how you last answered, when, how many times you have reviewed it, and when it is next due. A short identifier derived from the word and its two languages is stored alongside each entry so that the same entry can be recognised across your devices. Each entry is associated with your account.</p>
+      <p><strong>What is never uploaded:</strong> the webpage you were on, its address or title, the surrounding text used to detect the language, your Recently Translated history, your Learning Statistics, your Settings, and the internal record of items you have deleted. Removing an entry from your Vocabulary while you are signed in removes it from your account too, but the record that it <em>was</em> deleted stays on your device only.</p>
+      <p><strong>Synchronization is automatic for signed-in accounts, but it is not scheduled.</strong> It runs in response to something happening: you changed your Vocabulary, you signed in, the extension started with you already signed in, or you are signing out. There is <strong>no timer, no polling, no background schedule and no realtime connection</strong> — SelectLingo does not sync on any clock, and it does not retry by itself.</p>
+      <p><strong>This is not a backup service.</strong> It is a copy of your saved Vocabulary in your account, kept up to date while you are signed in. It is deleted when you delete your account (Section 10).</p>
     </section>
 
     <section>
       <h2>7. Analytics and tracking</h2>
-      <p>SelectLingo does not currently use product analytics, advertising trackers, behavioral profiling, telemetry, or remote crash-reporting. The Extension does not contain any analytics or tracking software development kit (SDK).</p>
-      <p>If this changes in a future version, we will update this Privacy Policy — and, where required, SelectLingo's in-product disclosures and Chrome Web Store listing — before that change takes effect, and any future analytics will be designed to avoid collecting the content of your selections, translations, or vocabulary.</p>
+      <p>SelectLingo does not use product analytics, advertising trackers, behavioral profiling, or any third-party crash-reporting service. The Extension does not contain any analytics or tracking software development kit (SDK).</p>
+
+      <h3>Optional reliability reports — only if you turn them on</h3>
+      <p>SelectLingo has one optional setting, <strong>Help improve SelectLingo</strong> (Settings → Extension behavior), that sends technical reliability reports to us when something fails. <strong>It is off unless you turn it on.</strong> It is not turned on by installing or updating SelectLingo, by signing in, or by using any other feature. The choice applies only to the browser where you make it: unlike your other Settings, it is <strong>not</strong> synchronized by Chrome Sync, so turning it on in one browser does not turn it on in any other.</p>
+      <p>While it is on, each report says only:</p>
+      <ul>
+        <li>which part of SelectLingo failed, as a fixed code — for example, that the browser's translator was unavailable, that language detection gave no result, or that a translation's label had to stay hidden because there was no safe room for it on the page;</li>
+        <li>a fixed technical category for that failure, chosen from a short built-in list — never the error message itself;</li>
+        <li>whether it was a failure or a deliberate safe fallback;</li>
+        <li>for a translation label that had to stay hidden, whether space had been reserved for it on the page;</li>
+        <li>the SelectLingo version and the report format version.</li>
+      </ul>
+      <p>A report <strong>never</strong> includes the text you selected, its translation, the surrounding text, your Vocabulary, the content or title of the page, the address (URL) or name of the website, error messages, your email address or account, or any identifier for you, your browser or your installation. It is not used for advertising, profiling or tracking, and it is not sold or shared.</p>
+      <p>Reports go from your browser to a SelectLingo function in our Supabase project (see Section 8), which accepts only this fixed format and stores the fields above together with the time it received them. Like any internet request, sending a report reveals technical connection information to the server in transit. SelectLingo does not store any of it with the report, but Supabase's own operational logs for incoming requests record it for a limited period (see Section 9): your <strong>IP address</strong>, approximate <strong>location information derived from it</strong> (such as country, region, city and time zone), the name of the <strong>network provider</strong> it belongs to, your browser's <strong>user-agent string</strong> (which identifies the browser and operating system), and technical fingerprints of the encrypted connection. We have not observed the contents of reports in those logs. Because of this connection information, we describe these reports as privacy-minimized technical information rather than as &quot;anonymous&quot;.</p>
+      <p>You can turn the setting off at any time. Reports that have not yet been sent are discarded when you do, and nothing further is sent.</p>
     </section>
 
     <section>
       <h2>8. Sharing and third parties</h2>
-      <p>SelectLingo does not sell your information. SelectLingo does not operate a backend service that receives your translated text, vocabulary, or learning data, so there is no SelectLingo-controlled server for this data to be shared from.</p>
-      <p>Three categories of platform involvement are worth noting:</p>
+      <p>SelectLingo does not sell your information. The only content of yours that reaches a service we chose is the Vocabulary kept in your account while you are signed in, described in Section 6, and it is held there to give it back to you on your own devices — it is not shared with anyone else, not used to build a profile, and not used for advertising, marketing or training.</p>
+      <h3>Sign-in providers — only if you sign in</h3>
+      <p>If you choose to create a SelectLingo account, two companies are involved, and only in connection with your account.</p>
+      <p><strong>Google, as the sign-in provider.</strong> When you press <strong>Sign in with Google</strong>, Chrome opens Google's own sign-in page so that you can authenticate with your Google account. SelectLingo asks Google only to confirm who you are — technically, for the <code>openid</code> and <code>email</code> sign-in scopes, and not for your Google profile name or picture. <strong>SelectLingo does not request, and cannot obtain, access to Gmail, Google Drive, Google Calendar, Google Contacts, Google Photos, or any other Google service or data</strong>, and it holds no long-lived Google credential of any kind. Google receives the fact that you signed in to this application, together with the ordinary technical information any website receives when you connect to it, such as your IP address. That is Google's own processing under Google's own privacy policy.</p>
+      <p><strong>Supabase, as the account service.</strong> SelectLingo uses <strong>Supabase</strong> (Supabase, Inc.) to hold accounts. When you sign in, Supabase creates and keeps an account record containing your <strong>email address</strong>, an <strong>account identifier</strong>, the fact that the account is linked to Google sign-in, the information Google provides when confirming your identity, and the technical timestamps and session records needed to keep you signed in. Supabase's servers also record ordinary authentication and infrastructure logs, which include <strong>IP addresses</strong>. If you have an account, the same Supabase project also holds the cloud copy of your Vocabulary described in Section 6, stored against your account identifier. Supabase acts as our service provider (a &quot;data processor&quot;) for both, under its published data processing terms, and processes them only to provide the sign-in and account-storage services.</p>
+      <p>The SelectLingo project used for accounts is located in the <strong>European Union</strong>. That reduces, but does not eliminate, processing outside the EU: Supabase states that information may be transferred to and stored in other countries, including the United States and Singapore, and relies on the European Commission's Standard Contractual Clauses for those transfers. See Section 13.</p>
+      <p><strong>Supabase, for optional reliability reports.</strong> If you turn on <strong>Help improve SelectLingo</strong> (Section 7), the technical reports it sends are received by a SelectLingo function in the same Supabase project and stored there, whether or not you have an account. Supabase acts as our data processor for them too, under the same terms. They are not linked to your account, because they carry no identifier.</p>
+      <p><strong>What is <em>not</em> sent to Google, ever:</strong> your Vocabulary, your Study progress, your Recently Translated history, your Learning Statistics, your Settings, the text you select on webpages, and the pages you visit. Google is only asked to confirm who you are.</p>
+      <p><strong>What is <em>not</em> sent to Supabase:</strong> your Recently Translated history, your Learning Statistics, your Settings, the text you select on webpages, and the pages you visit. None of those is uploaded, before or after you sign in. Your Vocabulary and its Study progress are sent only while you are signed in, exactly as described in Section 6.</p>
+      <p><strong>Account deletion runs through one small SelectLingo function.</strong> Deleting your account sends only your own sign-in credential to a single server-side function operated by SelectLingo inside the same Supabase project. That function works out which account is yours from the credential itself — the Extension cannot name an account — and deletes it. See Section 10.</p>
+
+      <h3>Browser-platform involvement</h3>
+      <p>Three categories of platform involvement are worth noting, and they are different in kind from the sign-in providers above:</p>
       <ul>
         <li>Chrome's built-in Translator and LanguageDetector capabilities process the text described in Section 5 as part of providing browser functionality, as described there.</li>
         <li>If you use Chrome Sync, your Settings may pass through Google's Chrome Sync infrastructure as described in Section 6.</li>
         <li>If you use <strong>Listen</strong>, your browser's speech synthesis produces the audio. Where your browser has no on-device voice for that language and uses a remote one, the text being spoken is sent by your browser to that speech provider, as described in Section 5.</li>
       </ul>
-      <p>We do not treat this browser-platform involvement as SelectLingo choosing a third-party &quot;data processor,&quot; since SelectLingo does not select, configure, or control that infrastructure — it is part of the Chrome browser you have chosen to use.</p>
+      <p>We do not treat this browser-platform involvement as SelectLingo choosing a third-party &quot;data processor,&quot; since SelectLingo does not select, configure, or control that infrastructure — it is part of the Chrome browser you have chosen to use. The sign-in providers described above are different: SelectLingo does choose and configure those, and they are described as what they are.</p>
     </section>
 
     <section>
       <h2>9. Data retention</h2>
       <ul>
         <li><strong>Recently translated</strong> is kept as a bounded, rolling history; once the limit is reached, the oldest entries are automatically replaced by new ones.</li>
-        <li><strong>Vocabulary</strong> has no expiry and is never removed automatically: it is kept for as long as you keep it, until you remove an item, clear your Vocabulary, or uninstall the Extension. This is deliberate — deleting words you chose to save, in order to make room for other words you chose to save, is not a decision SelectLingo makes for you.</li>
+        <li><strong>Vocabulary</strong> has no expiry and is never removed automatically: it is kept for as long as you keep it, until you remove an item, clear your Vocabulary, delete the SelectLingo account it was saved under (Section 10), or uninstall the Extension. This is deliberate — deleting words you chose to save, in order to make room for other words you chose to save, is not a decision SelectLingo makes for you.</li>
         <li><strong>Learning Statistics</strong> are kept on a rolling recent-activity basis and are also reset immediately whenever you use the in-product <strong>Reset statistics</strong> control.</li>
         <li><strong>Settings</strong> are kept until you change them, or until removed according to Chrome's storage/sync behavior (see Section 10).</li>
         <li><strong>Session state</strong> exists only for the current browser session and is not retained afterward.</li>
         <li><strong>Pronunciation</strong> retains nothing at all. SelectLingo keeps no record of what was spoken, which voice spoke it, or that Listen was used.</li>
+        <li><strong>Your sign-in record in this browser</strong> is kept until you sign out, delete your account, or uninstall the Extension, whichever happens first.</li>
+        <li><strong>Your account at the sign-in provider</strong> is kept until you delete it. Deleting it removes the account record — including your email address — and the sessions belonging to it.</li>
+        <li><strong>Reliability reports</strong> (only if you turned them on — Section 7) are kept for <strong>30 days</strong> after we receive them and then deleted automatically. Waiting reports that have not yet been sent exist only in your browser's memory and are discarded when you turn the setting off or the browser stops them. The operational logs our provider keeps for incoming requests — which include IP addresses, approximate location derived from them, network provider and browser user-agent information — are retained for a limited period set by the provider and then age out.</li>
+        <li><strong>Vocabulary kept in your account</strong> stays there until you remove it. Removing an entry from your Vocabulary while you are signed in removes it from the account; deleting the account removes everything it holds, in the same operation. It has no separate expiry, and we do not remove entries from it on our own.</li>
       </ul>
+      <p><strong>What happens to sign-in provider records after you delete your account, described honestly.</strong> Deleting your account removes the account itself immediately. Two things are not instantaneous, and we would rather say so than imply otherwise:</p>
+      <ul>
+        <li>A sign-in credential that had already been issued to your own browser stays technically valid until it expires shortly afterwards (by default, within one hour). SelectLingo erases its copy at once, so it holds none.</li>
+        <li>Our sign-in provider keeps ordinary authentication and infrastructure logs, which include IP addresses, and takes periodic backups of its systems. Those are retained for limited periods set by the provider and then age out. <strong>The provider does not publish an exact retention figure for authentication logs specifically, so we do not state one here.</strong> We will not describe those records as erased the instant your account is deleted, because that would not be true.</li>
+      </ul>
+      <p>If you would like to know the current position, write to us at the address in Section 15 and we will tell you what we have been able to establish.</p>
       <p>We describe these limits in general terms rather than as fixed numeric commitments, because they are ordinary product tuning values that may be adjusted over time without changing what is collected or why. If a future change to these limits would materially change how long your data is kept, we will update this Privacy Policy.</p>
     </section>
 
@@ -284,14 +335,35 @@
         <li><strong>Remove</strong> an individual Vocabulary item, or <strong>Clear</strong> your entire Vocabulary.</li>
         <li><strong>Reset statistics</strong> to erase your Learning Statistics immediately.</li>
         <li><strong>Change</strong> any setting at any time; the new value replaces the old one.</li>
+        <li><strong>Turn off</strong> reliability reports (<strong>Help improve SelectLingo</strong>) at any time. Nothing further is sent, and reports not yet sent are discarded. Because reports carry no identifier, we cannot find or delete the ones already received for a particular person; they are deleted automatically after 30 days (Section 9). This choice is kept only in the browser where you made it and is not synchronized to your other browsers; uninstalling SelectLingo removes it.</li>
         <li><strong>Uninstall</strong> the Extension from Chrome, which removes SelectLingo's local extension storage (Vocabulary, Recently Translated, Learning Statistics, Settings, session state) from that browser installation.</li>
       </ul>
       <p>If you use Chrome Sync, your Settings may also exist on your other signed-in Chrome devices while the Extension is installed there. We are not able to guarantee the timing or completeness of removal of previously synced data from Google's own Chrome Sync infrastructure; Google's own documentation governs that behavior.</p>
+
+      <h3>If you have an account</h3>
+      <ul>
+        <li><strong>Sign out</strong> at any time, in Settings → Account. Signing out removes the sign-in record from this browser and ends the session. It deletes nothing else: your account still exists, and your Vocabulary, history, statistics, and Settings are untouched. You can keep using SelectLingo exactly as before.</li>
+        <li><strong>Delete your account</strong>, in Settings → Account → <strong>Delete account</strong>. You will be asked to confirm, and the confirmation lists what will and will not happen. Deletion is <strong>permanent and cannot be undone</strong>.</li>
+      </ul>
+      <p><strong>Deleting your account deletes the account and what belongs to it — not everything SelectLingo stores in your browser:</strong></p>
+      <pre><code>Delete SelectLingo account     ≠     Delete all data stored in your browser</code></pre>
+      <p><strong>Deleting your account does:</strong> permanently remove your SelectLingo account and its email address from our sign-in provider, remove the sessions belonging to it, and sign you out in this browser.</p>
+      <p><strong>Deleting your account also deletes any Vocabulary you had synced into it.</strong> The cloud copy belongs to the account, so it is removed when the account is, in the same operation.</p>
+      <p><strong>Deleting your account also deletes that account's data in this browser.</strong> While you are signed in, the Vocabulary (with its Study progress), Recently Translated history and Learning Statistics you create are kept in this browser separately for your account. Once the deletion is confirmed, SelectLingo removes them from the browser you deleted the account in. It cannot reach other browsers where you used the same account.</p>
+      <p><strong>Deleting your account does not:</strong> delete the Vocabulary, Recently Translated history, Learning Statistics or Study progress you saved in Guest mode, data belonging to another SelectLingo account used in this browser, or your Settings. Those stay exactly where they are. Use the controls listed above if you also want them removed. It also does <strong>not</strong> affect your Google account in any way — that account is yours, SelectLingo has no control over it, and deleting a SelectLingo account does not touch it.</p>
+      <p>Signing in again later creates a <strong>new</strong> SelectLingo account; it does not restore a deleted one.</p>
+      <p><strong>Changing your account email.</strong> SelectLingo has no profile editor and cannot change the email address on an account: the address comes from the Google account you signed in with. If you want your SelectLingo account to use a different address, delete the account and sign in again with the Google account you prefer.</p>
     </section>
 
     <section>
       <h2>11. Data security</h2>
-      <p>SelectLingo does not currently operate a backend server that stores your translated text, vocabulary, or learning data, so there is no SelectLingo-controlled remote database of this content to secure. Most of your content is kept using Chrome's own extension storage on your device (and, for Settings, Chrome's own sync infrastructure), which is protected by the security of your Chrome browser and Google account.</p>
+      <p>Most of your content is kept using Chrome's own extension storage on your device (and, for Settings, Chrome's own sync infrastructure), which is protected by the security of your Chrome browser and Google account. SelectLingo operates no server that receives your translated text, your Recently Translated history or your Learning Statistics.</p>
+      <p>If you have an account, the copy of your Vocabulary held in your account is stored in our provider's database with a row-level access rule that permits each account to read and write only its own entries, enforced by the database itself rather than by the Extension. Connections use HTTPS, and the Extension authenticates as you, with your own session — it holds no administrative credential and cannot reach another account's entries.</p>
+      <p>If you have an account, two further things are worth stating:</p>
+      <ul>
+        <li><strong>Your sign-in credentials stay inside the Extension.</strong> They are kept in the Extension's own private browser storage, which the websites you visit cannot read, and they are never placed in Chrome's sync storage, never written into a webpage, and never sent anywhere except to the sign-in provider that issued them. All connections to the sign-in provider use HTTPS.</li>
+        <li><strong>The privileged credential that can delete an account is never in the Extension.</strong> It exists only on the server side, inside our sign-in provider's infrastructure. That is why deletion runs through a small server-side function rather than being performed by the Extension: an extension's code can be read by anyone who installs it, so it must never be trusted with administrative authority.</li>
+      </ul>
       <p>We do not claim that any system is perfectly secure. Production builds of SelectLingo do not include diagnostic logging or remote logging of your content.</p>
     </section>
 
@@ -310,19 +382,39 @@
       <p>SelectLingo is an individually operated project. It has no company registration, no data protection officer, and no EU establishment to name here, and we would rather say so plainly than list an address that does not exist.</p>
 
       <h3>Why we are allowed to handle your information</h3>
-      <p>Almost everything SelectLingo does happens inside your own browser, on your own device, at your request, and never reaches us — there is no SelectLingo server for it to reach.</p>
+      <p>Almost everything SelectLingo does happens inside your own browser, on your own device, at your request, and never reaches us. The exceptions are an account, if you choose to create one, together with the copy of your Vocabulary that is kept in that account while you are signed in, and reliability reports, if you choose to turn them on.</p>
       <p>Where the GDPR applies, processing that is necessary to provide the features you ask for is generally handled on the basis that it is necessary to provide the service you requested. That covers translating text you selected, detecting its language, saving vocabulary you chose to save, your study progress and statistics, and remembering your settings. It also covers speaking a word when you press Listen, as described in Section 5.</p>
-      <p>We do not rely on consent as a general basis for these features, and we do not ask you to consent to them: you choose them by using them, and you can stop at any time. The acknowledgement shown when you first enable SelectLingo is a disclosure of what the Extension does — it is not GDPR consent, and we do not treat it as consent for anything. SelectLingo does no advertising, profiling, tracking, or marketing, so no processing here relies on legitimate interests for those purposes.</p>
-      <p>If SelectLingo ever introduces processing that genuinely needs your consent — analytics, for example — that would be asked for separately, would be optional, and could be withdrawn. This Privacy Policy would be updated before it took effect.</p>
+      <p><strong>The same basis covers your account, if you have one.</strong> Creating and maintaining your account, keeping you signed in, showing you which account you are signed in with, and deleting the account when you ask are all necessary to provide the optional account service you requested by pressing Sign in. It also covers the copy of your Vocabulary held in your account: keeping it in sync is part of the account service you asked for by signing in, and it stops when you sign out or delete the account. The authentication and security logs our sign-in provider keeps — which include IP addresses — are handled on the basis of our legitimate interest in operating a secure sign-in service, and they are minimal, expected, and short-lived.</p>
+      <p>We do not rely on consent as a general basis for these features, and we do not ask you to consent to them: you choose them by using them, and you can stop at any time. <strong>Pressing Sign in is a request for a service, not GDPR consent</strong>, and we do not describe it as consent — but signing in is entirely optional, nothing else in SelectLingo depends on it, and signing out or deleting your account stops that processing whenever you like. The acknowledgement shown when you first enable SelectLingo is a disclosure of what the Extension does — it is not GDPR consent, it is not consent to an account, and we do not treat it as consent for anything. SelectLingo does no advertising, profiling, tracking, or marketing, so no processing here relies on legitimate interests for those purposes.</p>
+      <p><strong>Reliability reports are the one thing based on your consent.</strong> They are not needed to provide anything you asked for, so they are sent only if you turn on <strong>Help improve SelectLingo</strong> — a separate, optional choice that is off by default — and you can withdraw that consent at any time by turning it off, which stops further reports. Withdrawing does not affect reports already received, which are deleted after 30 days (Section 9).</p>
+      <p>Reliability reports (Section 7) are processing of this kind: asked for separately, optional, and withdrawable at any time. If SelectLingo ever introduces other processing that genuinely needs your consent — analytics, for example — the same would apply, and this Privacy Policy would be updated before it took effect.</p>
+
+      <h3>Where your information is processed</h3>
+      <p>If you do not sign in and have not turned on reliability reports, nothing leaves your device to us or to a provider we chose, so there is no international transfer on our side to describe.</p>
+      <p>If you do sign in, or turn on reliability reports, the service we use holds that information in a project located in the <strong>European Union</strong>. Our provider states that information may nonetheless be transferred to and stored in other countries, including the United States and Singapore, and relies on the European Commission's <strong>Standard Contractual Clauses</strong> for transfers out of the EEA, the UK and Switzerland. Signing in with Google also involves Google's own global infrastructure, under Google's own terms. We describe this rather than claim that everything stays in the EU, because an EU project location does not by itself guarantee that.</p>
 
       <h3>Your rights, and what they mean in practice</h3>
       <p>Where the GDPR applies, you have rights to <strong>access</strong> your personal data, to have it <strong>corrected</strong>, to have it <strong>erased</strong>, to <strong>restrict</strong> or <strong>object to</strong> its processing, to <strong>data portability</strong>, and to <strong>withdraw consent</strong> for any processing that actually relies on consent.</p>
-      <p>How these work for SelectLingo is unusual, and worth being direct about:</p>
+      <p>How these work for SelectLingo is unusual, and worth being direct about. The answer differs depending on whether you have an account.</p>
+      <p><strong>If you have never signed in:</strong></p>
       <ul>
-        <li><strong>We hold nothing about you.</strong> SelectLingo has no accounts, no sign-in, no user or device identifier, and no server that receives your data. In the ordinary case we cannot identify you at all, and we hold no copy of your vocabulary, history, statistics, or settings to give you, correct, or delete.</li>
+        <li><strong>We hold nothing about you.</strong> Without an account there is no user or device identifier, and nothing of yours is uploaded. We cannot identify you at all, and we hold no copy of your vocabulary, history, statistics, or settings to give you, correct, or delete. Cloud Sync requires an account, so without one it cannot have uploaded anything. If you turned on reliability reports, the reports we store carry no identifier, and we do not link them to you (Section 7); they are deleted after 30 days.</li>
         <li><strong>You already hold it, and you can act on it directly.</strong> Your data is in your own browser, and the controls listed in Section 10 act on it immediately: view everything in the Vocabulary, Recently Translated, and Statistics views; remove a single item or a single translation; <strong>Clear</strong> your Vocabulary or your Recently Translated history; <strong>Reset statistics</strong>; change any setting; or uninstall the Extension. These are not requests to us — they take effect the moment you use them.</li>
+      </ul>
+      <p><strong>If you have an account, one record about you does exist</strong>, and these rights are live for it:</p>
+      <ul>
+        <li><strong>Access.</strong> We can tell you what the account holds: your email address, the account identifier, the fact that it is linked to Google sign-in, the associated timestamps and session records, and the Vocabulary entries kept in it while you were signed in, as described in Section 6. We hold nothing else about you; in particular, no copy of your Recently Translated history, your Learning Statistics or your Settings.</li>
+        <li><strong>Erasure.</strong> You do not have to ask us. <strong>Settings → Account → Delete account</strong> deletes it permanently, yourself, immediately — including any Vocabulary you had synced into it. To remove entries from the account without deleting it, remove them from your Vocabulary while you are signed in. Section 10 explains exactly what that does and does not remove, and Section 9 explains what our provider's logs and backups retain afterwards.</li>
+        <li><strong>Rectification.</strong> Your email address comes from the Google account you signed in with, and SelectLingo has no way to edit it. To change it, delete the account and sign in again with the address you want.</li>
+        <li><strong>Restriction and objection.</strong> Signing out stops all account processing while leaving everything else working.</li>
+        <li><strong>Portability.</strong> The account record is an email address and an identifier you already know. Your Vocabulary and study data are in your own browser, and a copy is in your account only for Vocabulary saved or moved into it while you were signed in. SelectLingo does not yet have an export feature, and we say so rather than imply one; if you want a copy of what your account holds, write to us at the address in Section 15.</li>
+        <li><strong>We will not demand identity documents.</strong> If you write to us about an account, we will normally verify you through the account itself — for example by replying to the address on it — rather than by collecting more information about you than we already hold.</li>
+      </ul>
+      <p><strong>In either case:</strong></p>
+      <ul>
         <li><strong>Settings synced by Chrome are in your own Google account</strong>, not ours (Section 6). We have no access to them and cannot delete them for you; Google's own Chrome Sync controls and documentation govern that.</li>
-        <li><strong>You can still write to us.</strong> If you have a question about this Privacy Policy, believe SelectLingo holds something about you, or want help using the controls above, contact <a href="mailto:george.poliak83@gmail.com">george.poliak83@gmail.com</a> and we will respond. We will not ask you for identity documents to answer a question about data we do not hold.</li>
+        <li><strong>Your Google account is yours.</strong> Deleting a SelectLingo account never deletes, disables, or changes your Google account. If you want to remove SelectLingo's access from Google's side as well, use Google's own account permission controls.</li>
+        <li><strong>You can still write to us.</strong> If you have a question about this Privacy Policy, believe SelectLingo holds something about you, or want help using the controls above, contact <a href="mailto:george.poliak83@gmail.com">george.poliak83@gmail.com</a> and we will respond.</li>
       </ul>
 
       <h3>Complaining to a supervisory authority</h3>
@@ -332,7 +424,7 @@
     <section>
       <h2>14. Changes to this Privacy Policy</h2>
       <p>We may update this Privacy Policy as SelectLingo evolves. If we make a change that materially affects how your information is handled, we will update the effective date below and, where appropriate, provide additional notice (for example, through the Extension or the Chrome Web Store listing) before the change takes effect.</p>
-      <p><strong>Last updated:</strong> August 30, 2026</p>
+      <p><strong>Last updated:</strong> October 3, 2026</p>
     </section>
 
     <section>
